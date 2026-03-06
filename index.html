@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 Years of Love</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Great+Vibes&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ========================================
+   GOLDEN HOUR LOVE LETTER
+   5-Year Anniversary Photo Collage
+   ======================================== */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --linen: #FAF6F1;
+  --linen-deep: #F3ECE2;
+  --burgundy: #5C2434;
+  --burgundy-light: #7A3A4E;
+  --gold: #C9A96E;
+  --gold-light: #DBBF8A;
+  --gold-pale: #E8D5B0;
+  --rose: #D4A5A5;
+  --rose-light: #E8C8C8;
+  --dark: #2C1810;
+  --dark-overlay: rgba(44, 24, 16, 0.85);
+  --cream: #FFF8F0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--linen);
+  color: var(--burgundy);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle linen texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ---- HERO SECTION ---- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(201, 169, 110, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(212, 165, 165, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 0%, rgba(201, 169, 110, 0.05) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.hero-ornament {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-ornament::before {
+  content: '♥';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.75rem;
+  color: var(--gold);
+  background: var(--linen);
+  padding: 0 12px;
+}
+
+.hero-numeral {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(5rem, 15vw, 12rem);
+  line-height: 1;
+  color: var(--gold);
+  opacity: 0.2;
+  margin-bottom: -2rem;
+  animation: fadeInDown 1.2s ease-out both;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  letter-spacing: 0.08em;
+  color: var(--burgundy);
+  margin-bottom: 0.5rem;
+  animation: fadeInUp 1s 0.3s ease-out both;
+}
+
+.hero-script {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(1.5rem, 4vw, 2.8rem);
+  color: var(--gold);
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s 0.6s ease-out both;
+}
+
+.hero-date {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--burgundy-light);
+  opacity: 0.7;
+  animation: fadeInUp 1s 0.9s ease-out both;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gold);
+  opacity: 0.5;
+  animation: fadeInUp 1s 1.2s ease-out both, gentleBounce 2.5s 2.5s ease-in-out infinite;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.hero-scroll:hover {
+  opacity: 0.8;
+}
+
+.hero-scroll span {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.hero-scroll svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---- SECTION DIVIDERS ---- */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+}
+
+.divider-line {
+  flex: 1;
+  max-width: 180px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-pale));
+}
+
+.divider-line:last-child {
+  background: linear-gradient(90deg, var(--gold-pale), transparent);
+}
+
+.divider-icon {
+  color: var(--gold);
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+/* ---- GALLERY INTRO ---- */
+.gallery-intro {
+  text-align: center;
+  padding: 0 2rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.gallery-intro h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.gallery-intro p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--burgundy-light);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* ---- MASONRY GALLERY ---- */
+.gallery {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  column-count: 3;
+  column-gap: 1.5rem;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  position: relative;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  background: var(--cream);
+  box-shadow:
+    0 2px 8px rgba(44, 24, 16, 0.06),
+    0 1px 3px rgba(44, 24, 16, 0.04);
+}
+
+.gallery-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(201, 169, 110, 0.15);
+  border-radius: 4px;
+  pointer-events: none;
+  transition: border-color 0.4s ease;
+}
+
+.gallery-item:hover::after {
+  border-color: rgba(201, 169, 110, 0.4);
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.6s ease;
+  filter: saturate(0.9) contrast(1.02);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.03);
+  filter: saturate(1) contrast(1.05);
+}
+
+.gallery-item .photo-frame {
+  padding: 8px 8px 28px 8px;
+  background: var(--cream);
+}
+
+.gallery-item .photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.7rem;
+  color: var(--burgundy-light);
+  padding: 6px 8px;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover .photo-caption {
+  opacity: 1;
+}
+
+/* ---- LIGHTBOX ---- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark-overlay);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  cursor: pointer;
+}
+
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  animation: lightboxIn 0.4s ease-out;
+}
+
+.lightbox.active .lightbox-content {
+  animation: lightboxIn 0.4s ease-out;
+}
+
+.lightbox-content img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  cursor: default;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(201, 169, 110, 0.4);
+  border-radius: 50%;
+  background: rgba(44, 24, 16, 0.6);
+  color: var(--gold-light);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  z-index: 10001;
+}
+
+.lightbox-close:hover {
+  background: rgba(44, 24, 16, 0.8);
+  border-color: var(--gold);
+}
+
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(201, 169, 110, 0.3);
+  border-radius: 50%;
+  background: rgba(44, 24, 16, 0.4);
+  color: var(--gold-light);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  z-index: 10001;
+}
+
+.lightbox-nav:hover {
+  background: rgba(44, 24, 16, 0.7);
+  border-color: var(--gold);
+}
+
+.lightbox-prev { left: 1.5rem; }
+.lightbox-next { right: 1.5rem; }
+
+.lightbox-counter {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  color: var(--gold-pale);
+  letter-spacing: 0.2em;
+  opacity: 0.7;
+  z-index: 10001;
+}
+
+/* ---- LOVE LETTER ---- */
+.love-letter {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 4rem 2rem 2rem;
+}
+
+.love-letter-card {
+  position: relative;
+  background: var(--cream);
+  border-radius: 6px;
+  padding: 3rem 2.5rem;
+  box-shadow:
+    0 4px 20px rgba(44, 24, 16, 0.06),
+    0 1px 4px rgba(44, 24, 16, 0.04);
+  border: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+.love-letter-card::before {
+  content: '"';
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--gold-pale);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.love-letter-salutation {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.love-letter-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  line-height: 2;
+  color: var(--burgundy);
+  font-weight: 400;
+}
+
+.love-letter-body p {
+  margin-bottom: 1rem;
+}
+
+.love-letter-body p:last-child {
+  margin-bottom: 0;
+}
+
+.love-letter-closing {
+  margin-top: 1.8rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--burgundy);
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.love-letter-sig {
+  margin-top: 1.2rem;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+
+/* ---- FOOTER ---- */
+.footer {
+  text-align: center;
+  padding: 4rem 2rem 3rem;
+}
+
+.footer-hearts {
+  font-size: 1.5rem;
+  color: var(--rose);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5em;
+  opacity: 0.5;
+}
+
+.footer-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--burgundy-light);
+  opacity: 0.6;
+  line-height: 1.8;
+}
+
+.footer-script {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.6rem;
+  color: var(--gold);
+  margin-top: 1rem;
+  opacity: 0.7;
+}
+
+/* ---- EMPTY STATE ---- */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--burgundy-light);
+}
+
+.empty-state p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+.empty-state code {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  background: var(--linen-deep);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-style: normal;
+  color: var(--burgundy);
+}
+
+/* ---- ANIMATIONS ---- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gentleBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+@keyframes lightboxIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1024px) {
+  .gallery {
+    column-count: 2;
+    column-gap: 1.2rem;
+    padding: 1.5rem;
+  }
+  .gallery-item { margin-bottom: 1.2rem; }
+}
+
+@media (max-width: 600px) {
+  .hero { min-height: 85vh; padding: 1.5rem; }
+  .hero-numeral { margin-bottom: -1rem; }
+  .hero-title { letter-spacing: 0.04em; }
+  .hero-scroll { bottom: 1.5rem; }
+
+  .gallery {
+    column-count: 1;
+    max-width: 480px;
+    column-gap: 0;
+    padding: 1rem;
+  }
+  .gallery-item { margin-bottom: 1rem; }
+
+  .gallery-intro { padding: 0 1.5rem 1.5rem; }
+  .gallery-intro p { font-size: 1rem; }
+
+  .divider { padding: 2rem 1.5rem; }
+
+  .love-letter { padding: 2rem 1rem 1rem; }
+  .love-letter-card { padding: 2rem 1.5rem; }
+  .love-letter-card::before { font-size: 3.5rem; top: 0.5rem; left: 1rem; }
+  .love-letter-body { font-size: 1.05rem; line-height: 1.85; }
+  .love-letter-salutation { font-size: 1.6rem; }
+
+  .lightbox-nav { display: none; }
+  .lightbox-close { top: 1rem; right: 1rem; }
+  .lightbox-counter { bottom: 1rem; }
+
+  .footer { padding: 3rem 1.5rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-numeral">V</div>
+  <div class="hero-ornament" style="margin-bottom: 2rem;"></div>
+  <h1 class="hero-title">Five Years of Love</h1>
+  <p class="hero-script">Every moment, a treasure</p>
+  <div class="hero-ornament" style="margin-top: 0.5rem; margin-bottom: 1.5rem;"></div>
+  <p class="hero-date">Celebrating half a decade together</p>
+  <a href="#gallery" class="hero-scroll">
+    <span>Our Story</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </a>
+</section>
+
+<!-- ============ DIVIDER ============ -->
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-icon">✦</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- ============ GALLERY INTRO ============ -->
+<div class="gallery-intro">
+  <h2>Our Cherished Moments</h2>
+  <p>A collection of the moments that made us laugh, cry, dream, and fall in love all over again.</p>
+</div>
+
+<!-- ============ GALLERY ============ -->
+<div class="gallery" id="gallery"></div>
+
+<!-- ============ DIVIDER ============ -->
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-icon">♥</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- ============ LOVE LETTER ============ -->
+<section class="love-letter">
+  <div class="love-letter-card">
+    <p class="love-letter-salutation">Mi Alma,</p>
+    <div class="love-letter-body">
+      <p>These last 5 years I've learned so much about myself and you. I will be forever grateful for our time together and the memories we have shared.</p>
+      <p>You're beautiful in and out and I love the partner you are to me.</p>
+      <p>These next 5 years I hope to start a family and live out our goals we place on our marriage.</p>
+    </div>
+    <p class="love-letter-closing">I love you more than anything else<br>(close to Jameson)</p>
+    <p class="love-letter-sig">— Dan aka Hubby</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<div class="footer">
+  <div class="footer-hearts">♥ ♥ ♥</div>
+  <p class="footer-text">Here's to the next five years,<br>and all the years after that.</p>
+  <p class="footer-script">Forever & Always</p>
+</div>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">‹</button>
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">›</button>
+  <div class="lightbox-content">
+    <img id="lightbox-img" src="" alt="Photo">
+  </div>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
+
+<script>
+/* ==============================================
+   PHOTO CONFIGURATION
+
+   Add your photo filenames here.
+   Place all images in the "pics/" folder,
+   then list them below.
+
+   Example:
+     const PHOTOS = [
+       "beach-sunset.jpg",
+       "wedding-day.jpg",
+       "paris-trip.png",
+       "cooking-together.jpg",
+     ];
+   ============================================== */
+
+const PHOTOS = [
+  "CUNNINGHAM-101.jpg",
+  "LAURITA-1.jpg",
+  "DSC_0017.JPG",
+  "CUNNINGHAM-110.jpg",
+  "LAURITA-10.jpg",
+  "DSC_0019.JPG",
+  "IMG_1453.jpg",
+  "CUNNINGHAM-116.jpg",
+  "LAURITA-12.jpg",
+  "DSC_0021.JPG",
+  "DSC_0022.JPG",
+];
+
+/* Optional captions — map filename to caption text.
+   Leave empty or remove entries you don't want captions for. */
+const CAPTIONS = {
+  // "beach-sunset.jpg": "Our first trip together",
+  // "wedding-day.jpg": "The best day of our lives",
+};
+
+/* ============================================== */
+
+const gallery = document.getElementById('gallery');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCounter = document.getElementById('lightbox-counter');
+let currentIndex = 0;
+
+function buildGallery() {
+  if (PHOTOS.length === 0) {
+    gallery.innerHTML = `
+      <div class="empty-state" style="column-span: all;">
+        <p>Your photos are waiting to be added.</p>
+        <code>Add filenames to the PHOTOS array in index.html</code>
+      </div>
+    `;
+    return;
+  }
+
+  PHOTOS.forEach((filename, index) => {
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+    item.style.animationDelay = `${index * 0.08}s`;
+
+    const frame = document.createElement('div');
+    frame.className = 'photo-frame';
+
+    const img = document.createElement('img');
+    img.src = `pics/${filename}`;
+    img.alt = CAPTIONS[filename] || `Anniversary photo ${index + 1}`;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+
+    frame.appendChild(img);
+    item.appendChild(frame);
+
+    if (CAPTIONS[filename]) {
+      const caption = document.createElement('div');
+      caption.className = 'photo-caption';
+      caption.textContent = CAPTIONS[filename];
+      item.appendChild(caption);
+    }
+
+    item.addEventListener('click', () => openLightbox(index));
+    gallery.appendChild(item);
+  });
+
+  observeItems();
+}
+
+/* ---- Scroll reveal with IntersectionObserver ---- */
+function observeItems() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  document.querySelectorAll('.gallery-item').forEach((item) => {
+    observer.observe(item);
+  });
+}
+
+/* ---- Lightbox ---- */
+function openLightbox(index) {
+  currentIndex = index;
+  updateLightbox();
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function updateLightbox() {
+  lightboxImg.src = `pics/${PHOTOS[currentIndex]}`;
+  lightboxImg.alt = CAPTIONS[PHOTOS[currentIndex]] || `Photo ${currentIndex + 1}`;
+  lightboxCounter.textContent = `${currentIndex + 1} / ${PHOTOS.length}`;
+}
+
+function navigateLightbox(direction) {
+  currentIndex = (currentIndex + direction + PHOTOS.length) % PHOTOS.length;
+  updateLightbox();
+}
+
+document.getElementById('lightbox-close').addEventListener('click', (e) => {
+  e.stopPropagation();
+  closeLightbox();
+});
+
+document.getElementById('lightbox-prev').addEventListener('click', (e) => {
+  e.stopPropagation();
+  navigateLightbox(-1);
+});
+
+document.getElementById('lightbox-next').addEventListener('click', (e) => {
+  e.stopPropagation();
+  navigateLightbox(1);
+});
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navigateLightbox(-1);
+  if (e.key === 'ArrowRight') navigateLightbox(1);
+});
+
+/* ---- Init ---- */
+buildGallery();
+</script>
+</body>
+</html>
